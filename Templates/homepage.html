@@ -10,12 +10,26 @@
 <h2>Web</h2>
 <ul>
     {% for question_title in lines %}
-    <li style="list-style-type: none">{{ question_title[1] }}</li>
+    {% if question_title[3] == "Web" %}
+    <li style="list-style-type: none"><a href="/question_details/<id>">{{ question_title[1] }}</a></li>
+    {% endif %}
     {% endfor %}
 </ul>
 <h2>Python</h2>
-
+<ul>
+    {% for question_title in lines %}
+    {% if question_title[3] == "Python" %}
+    <li style="list-style-type: none"><a href="/question_details/<id>">{{ question_title[1] }}</a></li>
+    {% endif %}
+    {% endfor %}
+</ul>
 <h2>Egyéb</h2>
-
+<ul>
+    {% for question_title in lines %}
+    {% if question_title[3] == "Egyéb" %}
+    <li style="list-style-type: none"><a href="/question_details/<id>">{{ question_title[1] }}</a></li>
+    {% endif %}
+    {% endfor %}
+</ul>
 </body>
 </html>

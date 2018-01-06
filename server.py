@@ -12,6 +12,9 @@ def homepage():
 def asking_question():
     if request.method == 'GET':
         return render_template('ask_a_question_form.html')
+    elif request.method == 'POST':
+        data_manager.write_in_file('answer.csv')
+        return render_template('/')
 
 @app.route('/write_answer', methods=['POST', 'GET'])
 def writing_answer():

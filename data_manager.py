@@ -11,5 +11,5 @@ def read_file(filename):
 
 
 def write_in_file(filename):
-    with open(filename, "w") as file:
-        writer = file.read()
+    with open(filename, "w", encoding='utf-8') as csvfile:
+        writer = csv.writer(csvfile)
