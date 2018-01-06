@@ -1,12 +1,15 @@
 import csv
 
+
 def read_file(filename):
-    with open(filename, "r", encoding='utf-8') as file:
-        reader = csv.reader(file)
-        return [row for row in reader]
+    lines = []
+    with open(filename, encoding='utf-8', newline='') as csvfile:
+        reader = csv.reader(csvfile)
+        for row in reader:
+                lines.append(row)
+    return lines
+
 
 def write_in_file(filename):
-    with open(filename, "w", encoding='utf-8') as file:
-        writer = csv.writer(file)
-        for row in new_data:
-            writer.writerow(row)
+    with open(filename, "w") as file:
+        writer = file.read()

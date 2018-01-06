@@ -7,30 +7,15 @@
 <body>
 <h1>Főoldal</h1>
 <button type="button"><a href="/ask_question">Kérdés írása</a></button>
-<table>
-    <tr>
-        <td><h2>Web</h2></td>
-    </tr>
-    <tr>
-        <td>Kérdés</td>
-        <td>Kérdés2</td>
-    </tr>
-</table>
+<h2>Web</h2>
+<ul>
+    {% for question_title in lines %}
+    <li style="list-style-type: none">{{ question_title[1] }}</li>
+    {% endfor %}
+</ul>
+<h2>Python</h2>
 
-<table>
-    <tr>
-        <td><h2>Python</h2></td>
-    </tr>
-    <tr>
-        <td>Kérdés</td>
-        <td>Kérdés32</td>
-    </tr>
-</table>
+<h2>Egyéb</h2>
 
-<table>
-    <tr>
-        <td><h2>Egyéb</h2></td>
-    </tr>
-</table>
 </body>
 </html>

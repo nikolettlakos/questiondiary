@@ -5,7 +5,9 @@
     <title>Téma</title>
 </head>
 <body>
-<h1>{{ Title }}</h1>
+{% for title in %}
+<h1>{{ title }}</h1>
+{% endfor %}}
 
 </body>
 </html>
