@@ -6,14 +6,14 @@
 </head>
 <body>
 <h1>Kérdés</h1>
-<form action="server.py" method="post">
+<form action="/" method="post">
     <input type="text" required name="question_title" placeholder="Kérdés cím">
     <p><textarea required name="question_detail" rows="10" cols="50" placeholder="A kérdésed részleteit írd ide."></textarea></p>
     Kategória választás:
     <select title="category" required name="category">
-        <option>Web</option>
-        <option>Python</option>
-        <option>Egyéb</option>
+        <option value="Web">Web</option>
+        <option value="Python">Python</option>
+        <option value="Egyéb">Egyéb</option>
     </select>
     <p><button type="submit">Elküld</button>
     <button type="reset">Töröl</button></p>

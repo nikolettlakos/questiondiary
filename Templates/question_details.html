@@ -5,9 +5,13 @@
     <title>Téma</title>
 </head>
 <body>
-{% for title in %}
-<h1>{{ title }}</h1>
-{% endfor %}}
+{% for id in lines %}
+<h1>{{ id[1] }}</h1>
+{% endfor %}
+
+{% for data in lines %}
+{{ data[2] }}
+{% endfor %}
 
 </body>
 </html>
