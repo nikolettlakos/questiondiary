@@ -30,7 +30,8 @@ def writing_answer():
 @app.route('/question/<id>', methods=['GET'])
 def question_details(id):
     lines = data_manager.read_file('question.csv')
-    return render_template("question_details.html", id=id, lines=lines)
+    data = common.details_by_id('question.csv', id)
+    return render_template("question_details.html", id=id, lines=data)
 
 
 if __name__ == "__main__":

@@ -1,21 +1,14 @@
 import data_manager
 import csv
 
-def read_file(filename):
-    lines = []
-    with open(filename, encoding='utf-8') as csvfile:
-        reader = csv.reader(csvfile)
-        for row in reader:
-                lines.append(row)
 
-    print(lines)
+def details_by_id(filename, id):
+    lines = data_manager.read_file(filename)
 
-
-read_file("question.csv")
+    for data in lines:
+        if data[0] == id:
+            print(data)
 
 
-def write_file(filename):
-    with open(filename, encoding='utf-8') as csvfile:
-        writer = csv.writer(csvfile)
 
-write_file("answer.csv")
+details_by_id('question.csv', "1")

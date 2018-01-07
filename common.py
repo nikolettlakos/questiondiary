@@ -9,3 +9,11 @@ def id_generator(filename):
         new_id = id[0]
     new_id = int(new_id)
     new_id = new_id + 1
+
+
+def details_by_id(filename, id):
+    lines = data_manager.read_file(filename)
+
+    for data in lines:
+        if data[0] == id:
+            return data
