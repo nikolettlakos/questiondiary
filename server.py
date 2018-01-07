@@ -14,11 +14,13 @@ def asking_question():
     if request.method == 'GET':
         return render_template('ask_a_question_form.html')
     elif request.method == 'POST':
-        question = data_manager.read_file("question.csv")
-        form = request.form.to_dict()
-        form_list = [common.id_generator(question), form['question_title'], form['question_detail'], form['category'], time.time()]
-        question.append(form_list)
-        data_manager.write_in_file("question.csv", question)
+        lines = data_manager.read_file('question.csv')
+        data_dict = request.form.to_dict()
+        data_list = [common.id_generator('question.csv'),data_dict['question_title'], data_dict['question_detail'], data_dict['category'], time.time()]
+
+        lines.append(data_list)
+
+        data_manager.write_in_file("question.csv", lines)
         return redirect("/")
 
 
@@ -32,7 +34,6 @@ def question_details(id):
     lines = data_manager.read_file('question.csv')
     data = common.details_by_id('question.csv', id)
     return render_template("question_details.html", id=id, lines=data)
-
 
 if __name__ == "__main__":
     app.run(
