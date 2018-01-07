@@ -9,25 +9,25 @@
 <button type="button"><a href="/ask_question">Kérdés írása</a></button>
 <h2>Web</h2>
 <ul>
-    {% for question_title in lines %}
-    {% if question_title[3] == "Web" %}
-    <li style="list-style-type: none"><a href="/question/<id>">{{ question_title[1] }}</a></li>
+    {% for question_data in lines %}
+    {% if question_data[3] == "Web" %}
+    <li style="list-style-type: none"><a href="/question/{{ question_data[0] }}">{{ question_data[1] }}</a></li>
     {% endif %}
     {% endfor %}
 </ul>
 <h2>Python</h2>
 <ul>
-    {% for question_title in lines %}
-    {% if question_title[3] == "Python" %}
-    <li style="list-style-type: none"><a href="/question/<id>">{{ question_title[1] }}</a></li>
+    {% for question_data in lines %}
+    {% if question_data[3] == "Python" %}
+    <li style="list-style-type: none"><a href="/question/{{ question_data[0] }}">{{ question_data[1] }}</a></li>
     {% endif %}
     {% endfor %}
 </ul>
 <h2>Egyéb</h2>
 <ul>
-    {% for question_title in lines %}
-    {% if question_title[3] == "Egyéb" %}
-    <li style="list-style-type: none"><a href="/question/<id>">{{ question_title[1] }}</a></li>
+    {% for question_data in lines %}
+    {% if question_data[3] == "Egyéb" %}
+    <li style="list-style-type: none"><a href="/question/{{ question_data[0] }}">{{ question_data[1] }}</a></li>
     {% endif %}
     {% endfor %}
 </ul>
