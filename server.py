@@ -62,7 +62,19 @@ def edit_question(id):
     if request.method == 'GET':
         return render_template('ask_a_question_form.html')
     elif request.method == 'POST':
-        pass
+        data_dict = request.form.to_dict()
+
+        for data in lines:
+            question_id = data[0]
+            question_time= data[4]
+
+        data_list = [question_id, data_dict['question_title'], data_dict['question_detail'], data_dict['category'], question_time]
+
+        searched_id = int(id)
+        lines[searched_id] = data_list
+
+        data_manager.write_in_file('question.csv', lines)
+        return redirect('/')
 
 @app.route('/edit_answer/<id>', methods=['POST', 'GET'])
 def edit_answer(id):
