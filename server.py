@@ -77,6 +77,13 @@ def edit_answer(id):
         data_manager.write_in_file_latin('answer.csv', lines)
         return redirect('/')
 
+@app.route('/delete_answer/<id>', methods=['GET'])
+def delete_answer(id):
+    lines=data_manager.read_file_latin('answer.csv')
+
+    common.delete_answer('answer.csv', id)
+    return redirect('/')
+
 if __name__ == "__main__":
     app.run(
         debug=True,
