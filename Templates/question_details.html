@@ -7,8 +7,13 @@
 <body>
 <h1>{{ lines[1] }}</h1>
 <a href="/"><button type="button">Főoldal</button></a>
-<p>{{ lines[2] }}
+<a href="/question_edit"><button type="button">Kérdés szerkesztése</button></a>
+<p>
+    {{ lines[2] }}
 </p>
+    {% for answer_data in answer %}
+        <br>{{ answer_data[1] }}
+    {% endfor %}
 <p>
     <a href="/write_answer"><button type="button">Válasz írása</button></a>
     <a href="/edit"><button type="button">Válasz szerkesztése</button></a>
