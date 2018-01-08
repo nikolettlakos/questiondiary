@@ -6,8 +6,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
+    data = common.details_by_id('question.csv', id)
     lines = data_manager.read_file('question.csv')
-    return render_template("homepage.html", lines=lines)
+    return render_template("homepage.html", lines=lines, data=data)
 
 @app.route('/ask_question', methods=['POST', 'GET'])
 def asking_question():
@@ -52,6 +53,16 @@ def delete_question_with_answer(id):
 
     common.delete_question('question.csv', 'answer.csv', id)
     return redirect('/')
+
+@app.route('/question_edit/<id>', methods=['GET', 'POST'])
+def edit_question(id):
+    lines = data_manager.read_file('question.csv')
+    found_lines = common.find_question_line('question.csv', id)
+
+    if request.method == 'GET':
+        return render_template('ask_a_question_form.html')
+    elif request.method == 'POST':
+        pass
 
 @app.route('/edit_answer/<id>', methods=['POST', 'GET'])
 def edit_answer(id):
