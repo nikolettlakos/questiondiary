@@ -40,9 +40,18 @@ def writing_answer(id):
 @app.route('/question/<id>', methods=['GET'])
 def question_details(id):
     lines = data_manager.read_file('question.csv')
+
     data = common.details_by_id('question.csv', id)
     answer = common.answer_by_question_id('answer.csv', id)
     return render_template("question_details.html", id=id, lines=data, answer=answer)
+
+@app.route('/question/<id>/delete', methods=['GET'])
+def delete_question_with_answer(id):
+    lines_question=data_manager.read_file('question.csv')
+    lines_answer=data_manager.read_file_latin('answer.csv')
+
+    common.delete_question('question.csv', 'answer.csv', id)
+    return redirect('/')
 
 if __name__ == "__main__":
     app.run(

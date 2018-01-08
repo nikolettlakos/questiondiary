@@ -11,11 +11,6 @@ def id_generator(filename):
     new_id += 1
     return new_id
 
-def which_id_by_question(id):
-    lines = data_manager.read_file_latin(filename)
-    question_id = id
-
-
 
 def id_generator_for_answers(filename):
     lines = data_manager.read_file_latin(filename)
@@ -44,3 +39,12 @@ def answer_by_question_id(filename_answer, id):
         if answer[0] == id:
             searched_answers.append(answer)
     return searched_answers
+
+
+def delete_question(filename_question, filename_answer, id):
+    lines_question = data_manager.read_file(filename_question)
+    lines_answer = data_manager.read_file_latin(filename_answer)
+
+    searched_id = int(id)
+    lines_question.pop(searched_id)
+    data_manager.write_in_file('question.csv', lines_question)
