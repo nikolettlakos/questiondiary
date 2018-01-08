@@ -13,11 +13,14 @@
     {{ lines[2] }}
 </p>
     {% for answer_data in answer %}
-        <br>{{ answer_data[1] }}
+        <p>
+            <br>{{ answer_data[1] }}
+            <br><a href="/edit_answer/{{ answer_data[3] }}"><button type="button">Válasz szerkesztése</button></a>
+            <br><a href="/delete_answer/{{ answer_data[3] }}"><button type="button">Válasz törlése</button></a>
+        </p>
     {% endfor %}
 <p>
     <a href="/question/{{ lines[0] }}/write_answer"><button type="button">Válasz írása</button></a>
-    <a href="/edit"><button type="button">Válasz szerkesztése</button></a>
 </p>
 </body>
 </html>

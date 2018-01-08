@@ -53,6 +53,30 @@ def delete_question_with_answer(id):
     common.delete_question('question.csv', 'answer.csv', id)
     return redirect('/')
 
+@app.route('/edit_answer/<id>', methods=['POST', 'GET'])
+def edit_answer(id):
+    lines = data_manager.read_file_latin('answer.csv')
+    found_lines = common.find_answer_line('answer.csv,', id)
+
+    if request.method == 'GET':
+        return render_template('write_an_answer_form.html')
+    elif request.method == 'POST':
+        data_dict = request.form.to_dict()
+        found_lines[1] = data_dict['answer']
+
+        for data in lines:
+            answer_id_by_question = data[0]
+            answer_time = data[2]
+            answer_id = data[3]
+
+        data_list = [answer_id_by_question, data_dict['answer'], answer_time, answer_id]
+
+        searched_id = int(id)
+        lines[searched_id] = data_list
+
+        data_manager.write_in_file_latin('answer.csv', lines)
+        return redirect('/')
+
 if __name__ == "__main__":
     app.run(
         debug=True,

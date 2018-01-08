@@ -45,6 +45,26 @@ def delete_question(filename_question, filename_answer, id):
     lines_question = data_manager.read_file(filename_question)
     lines_answer = data_manager.read_file_latin(filename_answer)
 
+    edited_answers =[]
+    for data in lines_answer:
+        if id != data[0]:
+            edited_answers.append(data)
+            data_manager.write_in_file_latin('answer.csv', edited_answers)
+
     searched_id = int(id)
     lines_question.pop(searched_id)
     data_manager.write_in_file('question.csv', lines_question)
+
+
+def find_answer_line(filename, id):
+    lines = data_manager.read_file_latin('answer.csv')
+
+    for data in lines:
+        if id == data[3]:
+            return data
+
+
+
+
+
+
