@@ -11,6 +11,22 @@ def id_generator(filename):
     new_id += 1
     return new_id
 
+def which_id_by_question(id):
+    lines = data_manager.read_file_latin(filename)
+    question_id = id
+
+
+
+def id_generator_for_answers(filename):
+    lines = data_manager.read_file_latin(filename)
+
+    for search in lines:
+        new_id = search[3]
+
+    new_id = int(new_id)
+    new_id += 1
+    return new_id
+
 
 def details_by_id(filename, id):
     lines = data_manager.read_file(filename)
