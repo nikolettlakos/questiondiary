@@ -105,6 +105,7 @@ def delete_answer(id):
     lines=data_manager.read_file_latin('answer.csv')
 
     common.delete_answer('answer.csv', id)
+    common.answer_id_reduce('answer.csv', id)
     return redirect('/')
 
 if __name__ == "__main__":
