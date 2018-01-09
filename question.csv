@@ -3,3 +3,5 @@
 2,encoding='utf-8' vagy 'latin-1',"utf-8-al kérdéseket enged írni, latin-1-el válaszokat, de nem működik egyik se mindkettőre. Miért van ez? ",Python,1515404724.5046637
 3,Answer törlés és szerkesztés,"Amikor törlök egy választ egy kérdésen belül, akkor nem tudom utána szerkeszteni a többit, mert error-t dob. 
 Próbáltam csinálni hozzá egy function-t, ami ha törlődik egy válasz, akkor a többi létezőnek az ID-ját -1-el csökkenti. Így működik, viszont sokszor az ID-juk ugyanaz lesz a válaszoknak. Egyébként így is működik valamiért, mert ha utána szerkesztem az egyiket vagy törlöm, akkor nem törli vagy szerkeszti vele együtt a többi azonos ID-jüt. ",Web,Tue Jan  9 12:07:24 2018
+4,Hogy alakítsunk át egy csv file-t rendes adatbázissá?,"Létező csv file-okat szeretnék adatbázisba rendezni, úgy hogy ne vesszenek el az adatok belőle. ",Adatbázis,Tue Jan  9 20:55:03 2018
+5,Adatbázis kezelés,"Hol nyitom meg? Hol kezelem ezeket pontosan? A terminálba mindig be kell írnom egy parancssort, hogy működjön, vagy nem szükséges? (Pl: virtualenv)",Adatbázis,Tue Jan  9 20:58:51 2018
