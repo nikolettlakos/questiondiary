@@ -82,7 +82,15 @@ def find_question_line(filename, id):
             return data
 
 
+def answer_id_reduce(filename):
+    lines = data_manager.read_file_latin('answer.csv')
 
+    for data in lines:
+        data[3] = int(data[3])
+        data[3] = data[3] - 1
+        edited_answers = lines
+
+    data_manager.write_in_file_latin('answer.csv', edited_answers)
 
 
 

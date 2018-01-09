@@ -17,7 +17,7 @@ def asking_question():
     elif request.method == 'POST':
         lines = data_manager.read_file('question.csv')
         data_dict = request.form.to_dict()
-        data_list = [common.id_generator('question.csv'),data_dict['question_title'], data_dict['question_detail'], data_dict['category'], time.time()]
+        data_list = [common.id_generator('question.csv'),data_dict['question_title'], data_dict['question_detail'], data_dict['category'], time.asctime(time.localtime(time.time()))]
 
         lines.append(data_list)
 
@@ -31,7 +31,7 @@ def writing_answer(id):
     elif request.method == 'POST':
         lines = data_manager.read_file_latin('answer.csv')
         data_dict = request.form.to_dict()
-        data_list = [id, data_dict['answer'], time.time(), common.id_generator_for_answers('answer.csv')]
+        data_list = [id, data_dict['answer'], time.asctime(time.localtime(time.time())), common.id_generator_for_answers('answer.csv')]
 
         lines.append(data_list)
 
