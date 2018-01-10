@@ -61,7 +61,7 @@ def delete_answer(filename, id):
 
     edited_answers =[]
     for data in lines:
-        if id != data[3]:
+        if data[3] != id:
             edited_answers.append(data)
             data_manager.write_in_file_latin('answer.csv', edited_answers)
 

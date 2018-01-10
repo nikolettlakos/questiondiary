@@ -85,7 +85,6 @@ def edit_answer(id):
         return render_template('write_an_answer_form.html')
     elif request.method == 'POST':
         data_dict = request.form.to_dict()
-        found_lines[1] = data_dict['answer']
 
         for data in lines:
             answer_id_by_question = data[0]
@@ -105,7 +104,6 @@ def delete_answer(id):
     lines=data_manager.read_file_latin('answer.csv')
 
     common.delete_answer('answer.csv', id)
-    common.answer_id_reduce('answer.csv', id)
     return redirect('/')
 
 if __name__ == "__main__":
