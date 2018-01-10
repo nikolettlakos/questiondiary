@@ -4,7 +4,8 @@ body {
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
 }
 h1, h2 {
-    color: #ff0800
+    color: #ff0800;
+    font-family: Purisa;
 }
 
 button {
