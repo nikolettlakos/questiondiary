@@ -1,0 +1,27 @@
+body {
+    background-color: #ffd189;
+    align-items: center;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+}
+h1, h2 {
+    color: #ff0800
+}
+
+button {
+    background-color: #ff0800;
+    border-radius: 12px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+select {
+    background-color: white;
+}
+
+#text, a {
+    color: #0f0f0f;
+    text-decoration: none;
+}

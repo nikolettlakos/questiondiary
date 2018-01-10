@@ -5,3 +5,4 @@
 Próbáltam csinálni hozzá egy function-t, ami ha törlődik egy válasz, akkor a többi létezőnek az ID-ját -1-el csökkenti. Így működik, viszont sokszor az ID-juk ugyanaz lesz a válaszoknak. Egyébként így is működik valamiért, mert ha utána szerkesztem az egyiket vagy törlöm, akkor nem törli vagy szerkeszti vele együtt a többi azonos ID-jüt. ",Web,Tue Jan  9 12:07:24 2018
 4,Hogy alakítsunk át egy csv file-t rendes adatbázissá?,"Létező csv file-okat szeretnék adatbázisba rendezni, úgy hogy ne vesszenek el az adatok belőle. ",Adatbázis,Tue Jan  9 20:55:03 2018
 5,Adatbázis kezelés,"Hol nyitom meg? Hol kezelem ezeket pontosan? A terminálba mindig be kell írnom egy parancssort, hogy működjön, vagy nem szükséges? (Pl: virtualenv)",Adatbázis,Tue Jan  9 20:58:51 2018
+6,Project kezdés ,Mi a menete egy új project elkezdésének? ,Egyéb,Wed Jan 10 13:08:14 2018

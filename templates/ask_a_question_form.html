@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Kérdés</title>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
 <h1>Kérdés</h1>
 <form action="" method="post">
     <input type="text" required name="question_title" placeholder="Kérdés cím">
     <p><textarea required name="question_detail" rows="10" cols="50" placeholder="A kérdésed részleteit írd ide."></textarea></p>
-    Kategória választás:
-    <select title="category" required name="category">
+    <label id="text">Kategória választás:</label>
+    <select title="category" required name="category" id="text">
         <option value="Web">Web</option>
         <option value="Adatbázis">Adatbázis</option>
         <option value="Python">Python</option>
